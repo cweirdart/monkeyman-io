@@ -150,18 +150,6 @@
     .hero-cta svg { width: 16px; height: 16px; transition: transform 0.3s; }
     .hero-cta:hover svg { transform: translateY(3px); }
 
-    .scroll-hint {
-      position: absolute; bottom: 36px; left: 50%;
-      transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: rgba(240,236,228,0.5); font-size: 0.65rem;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      animation: float 2.5s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(6px); }
-    }
 
     /* ── About ────────────────────────────────────── */
     #about { padding: 120px 0; }
@@ -180,14 +168,13 @@
     .about-photo { display: flex; flex-direction: column; gap: 20px; }
 
     .about-photo-main {
-      border-radius: 4px; overflow: hidden;
-      background: #f5f0e8;
-      padding: 10px 10px 32px 10px;
+      border-radius: 2px; overflow: hidden;
+      background: none;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
       transform: rotate(1.5deg);
     }
     .about-photo-main img {
-      width: 100%; height: auto; aspect-ratio: 4/5;
+      width: 100%; height: auto;
       object-fit: cover; display: block;
     }
 
@@ -254,22 +241,58 @@
       gap: 24px; margin-top: 40px;
     }
     .gallery-item {
-      border-radius: 4px; overflow: hidden;
-      background: #f5f0e8;
-      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 2px; overflow: hidden;
+      background: none;
       transition: transform 0.35s, box-shadow 0.35s;
       cursor: pointer;
-      padding: 10px 10px 32px 10px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.3);
     }
+    .gallery-item:nth-child(odd) { transform: rotate(-0.8deg); }
+    .gallery-item:nth-child(even) { transform: rotate(0.6deg); }
+    .gallery-item:nth-child(3n) { transform: rotate(-0.3deg); }
     .gallery-item:hover { transform: scale(1.03) rotate(-0.5deg); box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
     .gallery-item:nth-child(even):hover { transform: scale(1.03) rotate(0.5deg); }
     .gallery-item img {
-      width: 100%; height: auto; aspect-ratio: 4/5;
+      width: 100%; height: auto;
       object-fit: cover; display: block;
       filter: saturate(0.9) contrast(1.05); transition: filter 0.3s;
     }
     .gallery-item:hover img { filter: saturate(1.1) contrast(1.1); }
+
+    /* ── Digital Photo Carousel ────────────────────── */
+    .digital-carousel {
+      margin-top: 60px;
+      overflow: hidden;
+      position: relative;
+    }
+    .digital-carousel::before, .digital-carousel::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none;
+    }
+    .digital-carousel::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+    .digital-carousel::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+    .digital-track {
+      display: flex; gap: 20px;
+      animation: scrollPhotos 25s linear infinite;
+      width: max-content;
+    }
+    .digital-track:hover { animation-play-state: paused; }
+    .digital-track img {
+      height: 340px; width: auto;
+      border-radius: 6px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .digital-track img:hover { transform: scale(1.03); }
+    @keyframes scrollPhotos {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @media (max-width: 768px) {
+      .digital-track img { height: 240px; }
+    }
 
     /* ── Lightbox ─────────────────────────────────── */
     .lightbox {
@@ -458,10 +481,6 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </a>
     </div>
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </div>
   </section>
 
   <!-- ── About ────────────────────────────────────── -->
@@ -534,10 +553,6 @@
   <!-- ── Music ────────────────────────────────────── -->
   <section id="music">
     <div class="container">
-      <div class="reveal">
-        <p class="section-label">Music</p>
-        <h2 class="section-title">Latest Mixes &amp; Sets</h2>
-      </div>
       <div class="music-grid">
         <div class="music-card reveal">
           <iframe height="166" scrolling="no" allow="autoplay"
@@ -561,10 +576,6 @@
   <!-- ── Video ────────────────────────────────────── -->
   <section id="video">
     <div class="container">
-      <div class="reveal">
-        <p class="section-label">Video</p>
-        <h2 class="section-title">Fault Radio &mdash; San Francisco</h2>
-      </div>
       <div class="video-wrapper reveal">
         <iframe src="https://www.youtube.com/embed/3bwjXSBJYsM" title="DJ Monkey Man | Fault Radio San Francisco" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
@@ -574,23 +585,33 @@
   <!-- ── Gallery ──────────────────────────────────── -->
   <section id="gallery">
     <div class="container">
-      <div class="reveal">
-        <p class="section-label">Gallery</p>
-        <h2 class="section-title">In the Booth &amp; Beyond</h2>
+      <!-- Digital photos — horizontal scrolling carousel -->
+      <div class="digital-carousel reveal">
+        <div class="digital-track">
+          <img src="img/gallery-purple-mix.jpg" alt="MonkeyMan purple-lit mixing" loading="lazy">
+          <img src="img/gallery-outdoor-duo.jpg" alt="MonkeyMan outdoor set" loading="lazy">
+          <img src="img/gallery-red-booth.jpg" alt="MonkeyMan red-lit booth" loading="lazy">
+          <img src="img/gallery-archway-dj.jpg" alt="MonkeyMan outdoor archway set" loading="lazy">
+          <img src="img/gallery-purple-dj.jpg" alt="MonkeyMan purple DJ session" loading="lazy">
+          <img src="img/gallery-sunset.jpg" alt="MonkeyMan scenic outdoor" loading="lazy">
+          <!-- duplicate set for seamless loop -->
+          <img src="img/gallery-purple-mix.jpg" alt="" loading="lazy">
+          <img src="img/gallery-outdoor-duo.jpg" alt="" loading="lazy">
+          <img src="img/gallery-red-booth.jpg" alt="" loading="lazy">
+          <img src="img/gallery-archway-dj.jpg" alt="" loading="lazy">
+          <img src="img/gallery-purple-dj.jpg" alt="" loading="lazy">
+          <img src="img/gallery-sunset.jpg" alt="" loading="lazy">
+        </div>
       </div>
-      <div class="gallery-grid">
+
+      <!-- Polaroids — these have real borders baked in -->
+      <div class="gallery-grid" style="margin-top:50px;">
         <div class="gallery-item reveal"><img src="img/gallery-vibes.jpg" alt="MonkeyMan feeling the music" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-purple-mix.jpg" alt="MonkeyMan purple-lit mixing" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-dancing.jpg" alt="MonkeyMan vibing at 62 Bar" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-outdoor-duo.jpg" alt="MonkeyMan outdoor set" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-booth.jpg" alt="MonkeyMan DJing in Hawaiian shirt" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-red-booth.jpg" alt="MonkeyMan red-lit booth" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-stripes.jpg" alt="MonkeyMan focused at the decks" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-archway-dj.jpg" alt="MonkeyMan outdoor archway set" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-silhouette.jpg" alt="MonkeyMan silhouette by the water" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-purple-dj.jpg" alt="MonkeyMan purple DJ session" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-jacket.jpg" alt="MonkeyMan in the jacket" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-sunset.jpg" alt="MonkeyMan scenic outdoor" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-warm.jpg" alt="MonkeyMan warm portrait" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-62bar.jpg" alt="MonkeyMan at 62 Bar" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-moody.jpg" alt="MonkeyMan moody booth shot" loading="lazy"></div>
@@ -679,7 +700,7 @@
   <!-- ── Footer ───────────────────────────────────── -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 MonkeyMan. All rights reserved. Photos by <a href="https://instagram.com/cweirdart" target="_blank" rel="noopener" style="color:var(--accent);">cweirdart</a></p>
+      <p>&copy; 2026 MonkeyMan. All rights reserved. Web design + photos by <a href="https://cweird.com" target="_blank" rel="noopener" style="color:var(--accent);">cweird</a></p>
     </div>
   </footer>
 
@@ -725,7 +746,7 @@
     // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
-    document.querySelectorAll('.gallery-item img').forEach(img => {
+    document.querySelectorAll('.gallery-item img, .digital-track img').forEach(img => {
       img.addEventListener('click', () => { lightboxImg.src = img.src; lightbox.classList.add('active'); });
     });
     lightbox.addEventListener('click', () => lightbox.classList.remove('active'));
