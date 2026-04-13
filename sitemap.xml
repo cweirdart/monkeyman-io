@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://monkeyman.io/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://monkeyman.io/img/hero-purple.jpg</image:loc>
+      <image:title>MonkeyMan DJing under purple lights</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://monkeyman.io/img/hero-scenic.jpg</image:loc>
+      <image:title>MonkeyMan outdoor DJ set at gazebo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://monkeyman.io/img/hero-redstage.jpg</image:loc>
+      <image:title>MonkeyMan red-lit stage performance</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://monkeyman.io/press.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

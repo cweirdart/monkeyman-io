@@ -1,0 +1,18 @@
+/* TEAM */
+Artist: MonkeyMan
+Location: Oakland, CA
+Contact: itsdjmonkeyman [at] gmail.com
+
+Design, Development & Photography: cweird
+Site: https://cweird.com
+
+/* SITE */
+Last update: 2026/04/13
+Language: English
+Doctype: HTML5
+Standards: HTML5, CSS3, ES6+
+Components: Vanilla JS, no frameworks
+Hosted on: GitHub Pages
+
+/* THANKS */
+To everyone in the Bay Area dance music community.

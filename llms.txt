@@ -1,0 +1,47 @@
+# MonkeyMan
+
+> MonkeyMan is an Oakland-based DJ and selector rooted in funk, disco, underground house, and classics. Available for bookings across the San Francisco Bay Area and beyond.
+
+## About
+
+MonkeyMan (also known as DJ MonkeyMan, @djmonkey_man, and itsdjmonkeyman) is a Bay Area DJ based in Oakland, California. His sound is rooted in funk, disco, and underground house, with a deep library of classics. From dusty vinyl crates to packed dance floors, his focus is always the groove.
+
+A regular on the Bay Area circuit, MonkeyMan has performed at venues including The Great Northern, Monarch, Ruby Room, The Valencia Room, Thee Stork Club, Decodance, Phonobar, Club Waziema, Arcana, Days Like This, and Compact Disco. He has been featured on Fault Radio San Francisco and appeared as a guest on La Casa Discoteca Radio Show. He has shared stages with acts including Young Franco, Kenny Summit, Jayvi Velasco, and Lady Ryan.
+
+## Genres
+
+Funk, Disco, Underground House, Classic House, Deep House, Boogie, Soul, Classics
+
+## Booking & Contact
+
+- Email: itsdjmonkeyman@gmail.com
+- Booking form: https://monkeyman.io/#connect
+- Location: Oakland, California (Bay Area / Northern California)
+- Available for: Club nights, warehouse parties, weddings, private events, brand activations, radio guest spots
+
+## Links
+
+- [Website](https://monkeyman.io/): Official site
+- [Instagram](https://instagram.com/djmonkey_man): @djmonkey_man
+- [SoundCloud](https://soundcloud.com/user-874682525): Mixes, sets, and original selections
+- [Twitch](https://twitch.tv/itsmonkeyman): Live streams
+- [YouTube — Fault Radio Set](https://www.youtube.com/watch?v=3bwjXSBJYsM): Featured set on Fault Radio San Francisco
+- [Linktree](https://linktr.ee/itsmonkeyman): All links
+
+## Sections of the site
+
+- Hero: Photo carousel of recent performances
+- About: Bio and background
+- Music: SoundCloud embeds of recent mixes including "Disco Divas" and "This is FUCKING HOUSE MUSIC"
+- Video: Full Fault Radio San Francisco set on YouTube
+- Gallery: Polaroid and digital photography of performances (photos by cweird)
+- Book/Connect: Contact form and social links for booking inquiries
+
+## Press & EPK
+
+- Press page: https://monkeyman.io/press.html
+- Includes: quick facts, 50-word bio, 100-word bio, venues list, shared stages, radio features, EPK poster download, press photos grid, booking CTAs
+
+## Credits
+
+Site design, development, and photography by cweird (https://cweird.com).

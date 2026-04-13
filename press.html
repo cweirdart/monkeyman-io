@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press &amp; Booking — MonkeyMan | Oakland DJ</title>
+  <meta name="description" content="Press kit, bio, high-res photos, and booking info for Oakland-based DJ MonkeyMan.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="canonical" href="https://monkeyman.io/press.html">
+
+  <meta property="og:site_name" content="MonkeyMan">
+  <meta property="og:title" content="Press & Booking — MonkeyMan">
+  <meta property="og:description" content="Press kit, bio, high-res photos, and booking info for Oakland-based DJ MonkeyMan.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://monkeyman.io/press.html">
+  <meta property="og:image" content="https://monkeyman.io/img/hero-purple.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a; --bg-card: #141414;
+      --text: #f0ece4; --text-dim: #8a857d;
+      --accent: #e8a849; --accent2: #d4783c;
+    }
+    html { scroll-behavior: smooth; background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    body { overflow-x: hidden; }
+    ::selection { background: var(--accent); color: var(--bg); }
+    a { color: var(--accent); }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      padding: 36px 0 30px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.04em; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .back-link { font-size: 0.85rem; color: var(--text-dim); text-decoration: none; }
+    .back-link:hover { color: var(--text); }
+
+    main { padding: 60px 0 100px; }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      font-size: 1.05rem; color: var(--text-dim); margin-bottom: 48px;
+      letter-spacing: 0.02em;
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem; font-weight: 600;
+      color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;
+      margin: 56px 0 20px; padding-bottom: 10px;
+      border-bottom: 1px solid rgba(232,168,73,0.2);
+    }
+
+    p { margin-bottom: 16px; font-size: 1rem; color: var(--text); }
+    .bio-short { font-size: 1.15rem; color: var(--text); font-weight: 400; }
+
+    .facts {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+      margin: 30px 0;
+    }
+    .fact {
+      background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; padding: 20px;
+    }
+    .fact-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 6px; font-weight: 600; }
+    .fact-value { font-size: 0.95rem; color: var(--text); word-break: break-word; }
+    .fact-value a { color: var(--text); text-decoration: underline; text-decoration-color: rgba(232,168,73,0.4); }
+
+    .epk-poster {
+      margin: 30px 0;
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .epk-poster img { width: 100%; height: auto; display: block; }
+
+    .photos-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      margin-top: 20px;
+    }
+    .photos-grid img { width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; border-radius: 8px; display: block; }
+    .photos-note { font-size: 0.85rem; color: var(--text-dim); margin-top: 16px; }
+
+    ul { margin-left: 22px; margin-bottom: 16px; }
+    ul li { margin-bottom: 6px; }
+
+    .cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 28px; margin-top: 8px;
+      border: 1px solid rgba(232,168,73,0.5); border-radius: 60px;
+      font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent); text-decoration: none;
+      transition: all 0.3s;
+    }
+    .cta:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+    footer {
+      text-align: center; padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.75rem; color: var(--text-dim);
+    }
+
+    @media (max-width: 600px) {
+      .facts { grid-template-columns: 1fr; }
+      .photos-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="/" class="logo">MONKEY<span>MAN</span></a>
+      <a href="/" class="back-link">&larr; Back to site</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <h1>Press &amp; Booking</h1>
+      <p class="subtitle">Everything you need to book MonkeyMan, in one place.</p>
+
+      <h2>Quick Facts</h2>
+      <div class="facts">
+        <div class="fact">
+          <div class="fact-label">Artist</div>
+          <div class="fact-value">MonkeyMan</div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Based in</div>
+          <div class="fact-value">Oakland, California</div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Genres</div>
+          <div class="fact-value">Funk &middot; Disco &middot; Underground House &middot; Classics</div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Booking</div>
+          <div class="fact-value"><a href="mailto:itsdjmonkeyman@gmail.com">itsdjmonkeyman@gmail.com</a></div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Instagram</div>
+          <div class="fact-value"><a href="https://instagram.com/djmonkey_man" target="_blank" rel="noopener">@djmonkey_man</a></div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">SoundCloud</div>
+          <div class="fact-value"><a href="https://soundcloud.com/user-874682525" target="_blank" rel="noopener">soundcloud.com/user-874682525</a></div>
+        </div>
+      </div>
+
+      <h2>Short Bio (50 words)</h2>
+      <p class="bio-short">MonkeyMan is an Oakland-based DJ and selector rooted in funk, disco, underground house, and classics. A regular on the Bay Area circuit, he has played The Great Northern, Monarch, Ruby Room, and The Valencia Room, and been featured on Fault Radio San Francisco.</p>
+
+      <h2>Long Bio (100 words)</h2>
+      <p>MonkeyMan is an Oakland-based DJ and selector rooted in funk, disco, underground house, and classics. From dusty vinyl crates to packed dance floors, it's always about the groove.</p>
+      <p>A regular on the Bay Area circuit, MonkeyMan has rocked venues from The Great Northern and Monarch to Ruby Room and The Valencia Room. Featured on Fault Radio San Francisco and a guest on La Casa Discoteca Radio Show, he has shared stages with acts like Young Franco, Kenny Summit, Jayvi Velasco, and Lady Ryan.</p>
+
+      <h2>Venues &amp; Residencies</h2>
+      <ul>
+        <li>Ruby Room</li>
+        <li>Thee Stork Club</li>
+        <li>Decodance</li>
+        <li>The Great Northern</li>
+        <li>Phonobar</li>
+        <li>Club Waziema</li>
+        <li>Arcana</li>
+        <li>Monarch</li>
+        <li>Days Like This</li>
+        <li>The Valencia Room</li>
+        <li>Compact Disco</li>
+      </ul>
+
+      <h2>Shared Stages</h2>
+      <ul>
+        <li>Young Franco &mdash; San Francisco, CA</li>
+        <li>Kenny Summit &mdash; Monterey, CA</li>
+        <li>Jayvi Velasco &mdash; San Francisco, CA</li>
+        <li>Lady Ryan &mdash; Oakland, CA</li>
+      </ul>
+
+      <h2>Radio &amp; Features</h2>
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=3bwjXSBJYsM" target="_blank" rel="noopener">Fault Radio San Francisco</a></li>
+        <li>La Casa Discoteca Radio Show (guest)</li>
+      </ul>
+
+      <h2>EPK Poster</h2>
+      <div class="epk-poster">
+        <img src="img/epk.png" alt="MonkeyMan EPK — Funk, Disco, Underground House, Classics">
+      </div>
+      <p><a href="img/epk.png" download class="cta">Download EPK (PNG)</a></p>
+
+      <h2>Press Photos</h2>
+      <p>High-resolution photography by <a href="https://cweird.com" target="_blank" rel="noopener">cweird</a>. Right-click any photo to save, or contact for original files.</p>
+      <div class="photos-grid">
+        <img src="img/hero-purple.jpg" alt="MonkeyMan DJing in purple-lit venue" loading="lazy">
+        <img src="img/hero-redstage.jpg" alt="MonkeyMan at red-lit stage" loading="lazy">
+        <img src="img/hero-outdoor.jpg" alt="MonkeyMan at outdoor gazebo set" loading="lazy">
+        <img src="img/hero-scenic.jpg" alt="MonkeyMan scenic outdoor DJ performance" loading="lazy">
+        <img src="img/hero-duo.jpg" alt="MonkeyMan with collaborator at outdoor booth" loading="lazy">
+        <img src="img/gallery-purple-mix.jpg" alt="MonkeyMan purple-lit mixing" loading="lazy">
+      </div>
+      <p class="photos-note">Credit photos: &ldquo;Photo by cweird&rdquo; — <a href="https://cweird.com" target="_blank" rel="noopener">cweird.com</a></p>
+
+      <h2>Booking</h2>
+      <p>Available for club nights, warehouse parties, weddings, private events, brand activations, and radio guest spots.</p>
+      <p><a href="mailto:itsdjmonkeyman@gmail.com" class="cta">Email to Book</a> &nbsp; <a href="/#connect" class="cta">Contact Form</a></p>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 MonkeyMan &middot; Site by <a href="https://cweird.com" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">cweird</a>
+    </div>
+  </footer>
+
+</body>
+</html>

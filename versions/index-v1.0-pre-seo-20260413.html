@@ -3,99 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- ── Primary Meta ───────────────────────────────── -->
-  <title>MonkeyMan — Oakland DJ | Funk, Disco, Underground House &amp; Classics</title>
-  <meta name="description" content="MonkeyMan is an Oakland-based DJ and selector rooted in funk, disco, underground house, and classics. Available for booking across the Bay Area and beyond.">
-  <meta name="keywords" content="MonkeyMan, DJ MonkeyMan, Oakland DJ, Bay Area DJ, San Francisco DJ, funk DJ, disco DJ, house DJ, underground house, booking, Fault Radio, itsdjmonkeyman">
-  <meta name="author" content="MonkeyMan">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#0a0a0a">
-  <link rel="canonical" href="https://monkeyman.io/">
-
-  <!-- ── Open Graph ─────────────────────────────────── -->
-  <meta property="og:site_name" content="MonkeyMan">
-  <meta property="og:title" content="MonkeyMan — Oakland DJ">
-  <meta property="og:description" content="Oakland-based DJ spinning funk, disco, underground house &amp; classics. Available for booking.">
-  <meta property="og:type" content="profile">
-  <meta property="profile:first_name" content="MonkeyMan">
-  <meta property="og:url" content="https://monkeyman.io/">
+  <title>MONKEYMAN — Oakland DJ</title>
+  <meta name="description" content="MONKEYMAN — Oakland-based DJ spinning funk, disco, underground house & classics.">
+  <meta property="og:title" content="MONKEYMAN">
+  <meta property="og:description" content="Oakland-based DJ — Funk, Disco, Underground House & Classics">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://monkeyman.io">
   <meta property="og:image" content="https://monkeyman.io/img/hero-purple.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="1600">
-  <meta property="og:image:alt" content="MonkeyMan DJing under purple lights at an Oakland venue">
-  <meta property="og:locale" content="en_US">
-
-  <!-- ── Twitter Card ───────────────────────────────── -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MonkeyMan — Oakland DJ">
-  <meta name="twitter:description" content="Oakland-based DJ spinning funk, disco, underground house &amp; classics.">
-  <meta name="twitter:image" content="https://monkeyman.io/img/hero-purple.jpg">
-  <meta name="twitter:image:alt" content="MonkeyMan DJing under purple lights">
-
-  <!-- ── Favicon + App Icons ────────────────────────── -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- ── Fonts ──────────────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- ── Preload first hero image for instant LCP ──── -->
-  <link rel="preload" as="image" href="/img/hero-scenic.webp" type="image/webp" fetchpriority="high">
-  <link rel="preload" as="image" href="/img/hero-scenic.jpg" fetchpriority="high">
-
-  <!-- ── Structured Data (JSON-LD) ──────────────────── -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MusicGroup",
-    "@id": "https://monkeyman.io/#musicgroup",
-    "name": "MonkeyMan",
-    "alternateName": ["DJ MonkeyMan", "itsdjmonkeyman"],
-    "url": "https://monkeyman.io/",
-    "image": "https://monkeyman.io/img/hero-purple.jpg",
-    "logo": "https://monkeyman.io/img/hero-purple.jpg",
-    "description": "Oakland-based DJ and selector rooted in funk, disco, underground house, and classics.",
-    "genre": ["Funk", "Disco", "House", "Underground House", "Classics"],
-    "foundingLocation": {
-      "@type": "Place",
-      "name": "Oakland, California, USA"
-    },
-    "location": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Oakland",
-        "addressRegion": "CA",
-        "addressCountry": "US"
-      }
-    },
-    "email": "itsdjmonkeyman@gmail.com",
-    "sameAs": [
-      "https://instagram.com/djmonkey_man",
-      "https://soundcloud.com/user-874682525",
-      "https://twitch.tv/itsmonkeyman",
-      "https://linktr.ee/itsmonkeyman"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://monkeyman.io/#website",
-    "url": "https://monkeyman.io/",
-    "name": "MonkeyMan",
-    "description": "Official site of Oakland DJ MonkeyMan",
-    "inLanguage": "en-US",
-    "publisher": { "@id": "https://monkeyman.io/#musicgroup" }
-  }
-  </script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -171,24 +88,20 @@
       position: absolute; inset: 0;
     }
 
-    .hero-carousel picture,
-    .hero-carousel > img {
+    .hero-carousel img {
       position: absolute; inset: 0;
-      opacity: 0;
-      animation: heroFade 30s infinite;
-    }
-    .hero-carousel picture img,
-    .hero-carousel > img {
       width: 100%; height: 100%;
       object-fit: cover; object-position: center 20%;
+      opacity: 0;
+      animation: heroFade 30s infinite;
       filter: brightness(0.45) saturate(0.75);
     }
 
-    .hero-carousel > *:nth-child(1) { animation-delay: 0s; }
-    .hero-carousel > *:nth-child(2) { animation-delay: 6s; }
-    .hero-carousel > *:nth-child(3) { animation-delay: 12s; }
-    .hero-carousel > *:nth-child(4) { animation-delay: 18s; }
-    .hero-carousel > *:nth-child(5) { animation-delay: 24s; }
+    .hero-carousel img:nth-child(1) { animation-delay: 0s; }
+    .hero-carousel img:nth-child(2) { animation-delay: 6s; }
+    .hero-carousel img:nth-child(3) { animation-delay: 12s; }
+    .hero-carousel img:nth-child(4) { animation-delay: 18s; }
+    .hero-carousel img:nth-child(5) { animation-delay: 24s; }
 
     @keyframes heroFade {
       0% { opacity: 0; }
@@ -400,26 +313,6 @@
     }
     .lightbox-close:hover { background: rgba(255,255,255,0.2); }
 
-    .lightbox-nav {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      width: 48px; height: 48px;
-      border: none;
-      background: rgba(255,255,255,0.08);
-      border-radius: 50%;
-      color: white; font-size: 1.8rem; line-height: 1; font-family: serif;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .lightbox-nav:hover { background: rgba(232,168,73,0.3); transform: translateY(-50%) scale(1.05); }
-    .lightbox-prev { left: 24px; }
-    .lightbox-next { right: 24px; }
-    @media (max-width: 600px) {
-      .lightbox-nav { width: 40px; height: 40px; font-size: 1.4rem; }
-      .lightbox-prev { left: 12px; }
-      .lightbox-next { right: 12px; }
-    }
-
     /* ── Connect ──────────────────────────────────── */
     #connect { padding: 100px 0 60px; }
 
@@ -548,61 +441,14 @@
       .gallery-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
       .shared-grid { grid-template-columns: 1fr 1fr; }
     }
-
-    /* ── Accessibility ──────────────────────────────── */
-    .skip-link {
-      position: absolute; top: -40px; left: 8px;
-      background: var(--accent); color: var(--bg);
-      padding: 10px 16px; border-radius: 6px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600; font-size: 0.85rem;
-      z-index: 1000; transition: top 0.2s;
-    }
-    .skip-link:focus { top: 8px; outline: 2px solid var(--text); }
-
-    a:focus-visible, button:focus-visible,
-    input:focus-visible, select:focus-visible, textarea:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-    .gallery-item:focus-visible, .digital-track img:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 4px;
-    }
-
-    /* Respect reduced-motion */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      .hero-carousel img { opacity: 1; }
-      .hero-carousel img:not(:first-child) { display: none; }
-      .reveal { opacity: 1; transform: none; }
-    }
-
-    /* ── Print styles ───────────────────────────────── */
-    @media print {
-      nav, .hero-carousel, .hero-cta, .scroll-hint, .venues-marquee,
-      .digital-carousel, .lightbox, form, .copy-email-btn {
-        display: none !important;
-      }
-      body { background: white; color: black; }
-      .hero-name, .section-title { color: black !important; text-shadow: none; }
-      a { color: black; text-decoration: underline; }
-    }
   </style>
 </head>
 <body>
 
-  <a href="#main" class="skip-link">Skip to content</a>
-
   <!-- ── Nav ──────────────────────────────────────── -->
-  <nav id="navbar" aria-label="Primary">
+  <nav id="navbar">
     <div class="container">
-      <a href="#hero" class="nav-logo" aria-label="MonkeyMan home">MONKEY<span>MAN</span></a>
+      <a href="#hero" class="nav-logo">MONKEY<span>MAN</span></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#music">Music</a></li>
@@ -616,31 +462,14 @@
     </div>
   </nav>
 
-  <main id="main">
-
   <!-- ── Hero ─────────────────────────────────────── -->
-  <section id="hero" aria-label="Hero">
-    <div class="hero-carousel" aria-hidden="true">
-      <picture>
-        <source srcset="img/hero-scenic.webp" type="image/webp">
-        <img src="img/hero-scenic.jpg" alt="" loading="eager" fetchpriority="high">
-      </picture>
-      <picture>
-        <source srcset="img/hero-duo.webp" type="image/webp">
-        <img src="img/hero-duo.jpg" alt="" loading="lazy">
-      </picture>
-      <picture>
-        <source srcset="img/hero-redstage.webp" type="image/webp">
-        <img src="img/hero-redstage.jpg" alt="" loading="lazy">
-      </picture>
-      <picture>
-        <source srcset="img/hero-outdoor.webp" type="image/webp">
-        <img src="img/hero-outdoor.jpg" alt="" loading="lazy">
-      </picture>
-      <picture>
-        <source srcset="img/hero-purple.webp" type="image/webp">
-        <img src="img/hero-purple.jpg" alt="" loading="lazy">
-      </picture>
+  <section id="hero">
+    <div class="hero-carousel">
+      <img src="img/hero-scenic.jpg" alt="" loading="eager">
+      <img src="img/hero-duo.jpg" alt="" loading="lazy">
+      <img src="img/hero-redstage.jpg" alt="" loading="lazy">
+      <img src="img/hero-outdoor.jpg" alt="" loading="lazy">
+      <img src="img/hero-purple.jpg" alt="" loading="lazy">
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -862,27 +691,16 @@
     </div>
   </section>
 
-  </main>
-
   <!-- ── Lightbox ──────────────────────────────────── -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Close photo viewer">&times;</button>
-    <button class="lightbox-nav lightbox-prev" aria-label="Previous photo" type="button">&#8249;</button>
-    <img src="" alt="" id="lightboxImg">
-    <button class="lightbox-nav lightbox-next" aria-label="Next photo" type="button">&#8250;</button>
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img src="" alt="Gallery photo enlarged" id="lightboxImg">
   </div>
 
   <!-- ── Footer ───────────────────────────────────── -->
-  <footer role="contentinfo">
+  <footer>
     <div class="container">
-      <p>
-        <a href="mailto:itsdjmonkeyman@gmail.com" style="color:var(--text-dim); text-decoration:underline;">Booking</a>
-        &nbsp;&middot;&nbsp;
-        <a href="/press.html" style="color:var(--text-dim); text-decoration:underline;">Press</a>
-        &nbsp;&middot;&nbsp;
-        <a href="/sitemap.xml" style="color:var(--text-dim);">Sitemap</a>
-      </p>
-      <p style="margin-top:10px;">&copy; 2026 MonkeyMan. All rights reserved. Web design + photos by <a href="https://cweird.com" target="_blank" rel="noopener" style="color:var(--accent);">cweird</a></p>
+      <p>&copy; 2026 MonkeyMan. All rights reserved. Web design + photos by <a href="https://cweird.com" target="_blank" rel="noopener" style="color:var(--accent);">cweird</a></p>
     </div>
   </footer>
 
@@ -925,79 +743,13 @@
       });
     });
 
-    // Lightbox with keyboard + arrow navigation
+    // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
-    const lbClose = lightbox.querySelector('.lightbox-close');
-    const lbPrev = lightbox.querySelector('.lightbox-prev');
-    const lbNext = lightbox.querySelector('.lightbox-next');
-    const galleryImages = Array.from(document.querySelectorAll('.gallery-item img, .digital-track img'));
-    // Deduplicate by src (digital carousel duplicates for looping)
-    const seen = new Set();
-    const uniqueImages = galleryImages.filter(img => {
-      if (seen.has(img.src)) return false;
-      seen.add(img.src); return true;
+    document.querySelectorAll('.gallery-item img, .digital-track img').forEach(img => {
+      img.addEventListener('click', () => { lightboxImg.src = img.src; lightbox.classList.add('active'); });
     });
-    let currentIdx = 0;
-    let lastFocused = null;
-
-    function openLightbox(idx) {
-      currentIdx = idx;
-      const img = uniqueImages[idx];
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt || 'Gallery photo enlarged';
-      lightbox.classList.add('active');
-      lightbox.setAttribute('aria-hidden', 'false');
-      lastFocused = document.activeElement;
-      lbClose.focus();
-    }
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      lightbox.setAttribute('aria-hidden', 'true');
-      if (lastFocused) lastFocused.focus();
-    }
-    function showImage(delta) {
-      currentIdx = (currentIdx + delta + uniqueImages.length) % uniqueImages.length;
-      const img = uniqueImages[currentIdx];
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt || '';
-    }
-
-    galleryImages.forEach(img => {
-      img.setAttribute('tabindex', '0');
-      img.setAttribute('role', 'button');
-      img.setAttribute('aria-label', 'Open photo: ' + (img.alt || 'gallery photo'));
-      const open = () => {
-        const idx = uniqueImages.findIndex(u => u.src === img.src);
-        if (idx >= 0) openLightbox(idx);
-      };
-      img.addEventListener('click', open);
-      img.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
-      });
-    });
-
-    lbClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
-    lbPrev.addEventListener('click', (e) => { e.stopPropagation(); showImage(-1); });
-    lbNext.addEventListener('click', (e) => { e.stopPropagation(); showImage(1); });
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox || e.target === lightboxImg) closeLightbox(); });
-
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('active')) return;
-      if (e.key === 'Escape') closeLightbox();
-      else if (e.key === 'ArrowLeft') showImage(-1);
-      else if (e.key === 'ArrowRight') showImage(1);
-    });
-
-    // Touch/swipe support for lightbox
-    let touchStartX = 0;
-    lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
-    lightbox.addEventListener('touchend', (e) => {
-      const diff = e.changedTouches[0].screenX - touchStartX;
-      if (Math.abs(diff) > 50) showImage(diff > 0 ? -1 : 1);
-    }, {passive: true});
-
-    // Copy-email UX improvement: visual feedback handled inline
+    lightbox.addEventListener('click', () => lightbox.classList.remove('active'));
   </script>
 
 </body>
