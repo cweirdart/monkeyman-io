@@ -4,6 +4,29 @@ All notable changes to monkeyman.io. Versions with `-live` in the git tag were w
 
 ---
 
+## [v3.1] — 2026-04-14 — Purple glow, lifted polaroids, expanded venues, structured data, OG card
+
+### Added
+- **Custom OG share card** (`img/og-card.jpg`, 1200×630, 57 KB) — brand-black background with purple radial glow behind the hand-drawn MONKEYMAN logo, tagline "HOUSE · FUNK · SOUL · NO REQUESTS" and "MONKEYMAN.IO" in gold. Replaces the cropped purple hero photo that iMessage was using. Wired into `og:image`, `twitter:image`, MusicGroup JSON-LD `image`, press.html, and sitemap.xml image:image.
+- **OG title simplified** — `og:title` / `twitter:title` changed from "MonkeyMan — Oakland DJ" to just "MonkeyMan" so iMessage/Slack/Twitter cards lead with the brand name (the browser `<title>` kept the long SEO-friendly string for search results). `og:description` updated to "Bay Area DJ. House · Funk · Soul · No Requests."
+- **Structured venue + collab data** — two new JSON-LD `ItemList` blocks: `#venues` (20 `Place` entities with city/state) and `#shared-decks` (5 `MusicGroup` entities). Both reference `#musicgroup` via `about`, so Google connects the lists to MonkeyMan's main entity without hard outbound links cluttering the page.
+- **Contact form placeholder** updated: "Tell us about your event, date, venue…" → "What's the event, venue, vision, vibe…?"
+- **Electric purple glow system** — new `--glow: #b24dff;` + `--glow-rgb` CSS variables drive a unified hover treatment across the site.
+  - Hero logo now pulses a soft purple drop-shadow (`@keyframes logoPulse`, 3.2s ease-in-out; disabled under `prefers-reduced-motion`).
+  - `Get Groovy` hero CTA, `Send It` form button, social-links sidebar, nav links, venue names in the marquee, shared-decks cards, and music cards all pick up the purple glow on hover.
+- **Polaroid lift + tilt hover** — every polaroid in the main gallery now lifts (`translateY(-8px)`), scales (`1.03`), and tilts more pronounced (odd −1.5°, even +1.5°, 3n −0.8°) on hover. About-polaroid unchanged.
+- **New venues** in the marquee + press page + llms.txt: Monterey Pride (inserted after Days Like This), Kilowatt, MHAH Gallery, Paris 75, Oakland Art Library, Asiento, Free*Party, High 5 Rooftop Bar, Town Bar & Lounge. Existing venue order preserved; new ones appended after.
+- **Cherry Pie** added to Shared the Decks With (San Francisco, CA). Bio and llms.txt updated to include Cherry Pie.
+
+### Changed
+- **"Shared the Stage With" → "Shared the Decks With"** (index + press + llms.txt + bios).
+- **Removed the "Email Directly" sidebar card** from the Connect section. Booking now flows through the form only. Orphan CSS (`.email-display`, `.copy-email-btn`) removed.
+
+### Notes
+- v3.1 snapshot saved to `versions/index-v3.1-purpleglow-20260414.html`.
+
+---
+
 ## [v3.0] — 2026-04-14 — Rebrand: logo, tagline, Fugaz One, flyers
 
 ### Added
