@@ -34,7 +34,7 @@ House, Funk, Soul, Disco, Underground House, Classic House, Deep House, Boogie, 
 - About: Bio and background
 - Music: SoundCloud embeds of recent mixes including "Disco Divas" and "This is FUCKING HOUSE MUSIC"
 - Video: Full Fault Radio San Francisco set on YouTube
-- Gallery: Polaroid and digital photography of performances (photos by cweird)
+- Gallery: Polaroid and digital photography of performances (photos by c.weird)
 - Book/Connect: Contact form and social links for booking inquiries
 
 ## Press & EPK
@@ -44,4 +44,4 @@ House, Funk, Soul, Disco, Underground House, Classic House, Deep House, Boogie, 
 
 ## Credits
 
-Site design, development, and photography by cweird (https://cweird.com).
+Site design, development, and photography by c.weird (https://cweird.com).
