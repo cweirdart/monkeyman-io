@@ -3,7 +3,7 @@ Artist: MonkeyMan
 Location: Oakland, CA
 Contact: itsdjmonkeyman [at] gmail.com
 
-Design, Development & Photography: cweird
+Design, Development & Photography: c.weird
 Site: https://cweird.com
 
 /* SITE */
