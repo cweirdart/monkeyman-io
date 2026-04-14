@@ -589,6 +589,14 @@
     .footer-logo:hover { opacity: 1; }
     .footer-logo img { width: 160px; height: auto; display: block; }
     footer p { font-size: 0.75rem; color: var(--text-dim); }
+    .footer-nav { margin-top: 4px; }
+    .footer-nav a {
+      font-size: 0.8rem; font-weight: 400; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--text-dim);
+      transition: color 0.3s, text-shadow 0.3s;
+      text-decoration: none;
+    }
+    .footer-nav a:hover { color: var(--text); text-shadow: 0 0 12px rgba(var(--glow-rgb), 0.8); }
 
     /* ── Animations ───────────────────────────────── */
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -679,6 +687,7 @@
         <li><a href="#music">Music</a></li>
         <li><a href="#video">Video</a></li>
         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="/press.html">Press Kit</a></li>
         <li><a href="#connect">Book</a></li>
       </ul>
       <button class="nav-hamburger" id="hamburger" aria-label="Menu">
@@ -983,14 +992,12 @@
           <img src="img/logo-footer.png" alt="MonkeyMan" width="180" height="107">
         </picture>
       </a>
-      <p>
-        <a href="mailto:itsdjmonkeyman@gmail.com" style="color:var(--text-dim); text-decoration:underline;">Booking</a>
+      <p class="footer-nav">
+        <a href="#connect">Book</a>
         &nbsp;&middot;&nbsp;
-        <a href="/press.html" style="color:var(--text-dim); text-decoration:underline;">Press</a>
-        &nbsp;&middot;&nbsp;
-        <a href="/sitemap.xml" style="color:var(--text-dim);">Sitemap</a>
+        <a href="/press.html">Press Kit</a>
       </p>
-      <p style="margin-top:10px;">&copy; 2026 MonkeyMan. All rights reserved. Web design + photos by <a href="https://cweird.com" target="_blank" rel="noopener" style="color:var(--accent);">cweird</a></p>
+      <p style="margin-top:14px;">&copy; 2026 MonkeyMan. All rights reserved. Web design + photos by <a href="https://cweird.com" target="_blank" rel="noopener" style="color:var(--accent);">cweird</a></p>
     </div>
   </footer>
 
