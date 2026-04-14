@@ -4,6 +4,34 @@ All notable changes to monkeyman.io. Versions with `-live` in the git tag were w
 
 ---
 
+## [v3.0] — 2026-04-14 — Rebrand: logo, tagline, Fugaz One, flyers
+
+### Added
+- **Hand-drawn MONKEYMAN logo** (`DJMonkeyMan_logo.png` → `img/logo.png` + `.webp`; trimmed whitespace, optimized for web). Used in hero (replaces text h1) and footer.
+- **Small footer variant** (`img/logo-footer.png` + `.webp`).
+- **New "M" favicon** — regenerated all sizes (16, 32, 180, 192, 512, .ico) from `MonkeyMan_M_Favicon.png`, centered on brand-black background with comfortable padding. Old text-M `favicon.svg` reference removed.
+- **Poster / flyer artwork** in the carousel — five event flyers (`img/poster-*.jpg` + `.webp`) alternating with digital performance shots. Originals preserved in `posters-flyers/`.
+
+### Changed
+- **Tagline** — "Funk · Disco · Underground House · Classics" → **"House · Funk · Soul · No Requests"** everywhere it appears (title, OG/Twitter, JSON-LD, hero sub, about tags, press quick facts, EPK alt, webmanifest, llms.txt summary).
+- **Bios updated** (index + press + llms.txt) — "rooted in house, funk, and soul — no requests."
+- **Hero CTA** — "Listen Now" → **"Get Groovy"**
+- **Section title font** — Space Grotesk → **Fugaz One** (heavier, more bold-poster feel that matches the new logo)
+- **Carousel moved** — was nested inside Gallery (below polaroids). Now its own `#carousel` section between Shared the Stage With and Music.
+- **Tightened vertical rhythm** — reduced section padding across the board to tighten the desktop flow:
+  - `#about` 120 → 80/60
+  - `.shared-section` 80 → 50/20
+  - `#music`, `#video`, `#gallery` 100 → 60
+  - `#connect` 100/60 → 70/50
+  - `.venues-section` margin-top 80 → 60
+
+### Notes
+- Original `posters-flyers/` folder kept untouched; optimized copies live in `img/`.
+- Original full-size `DJMonkeyMan_logo.png` and `MonkeyMan_M_Favicon.png` preserved at repo root per request.
+- v3.0 snapshot saved to `versions/index-v3.0-rebrand-20260414.html`.
+
+---
+
 ## [v2.0] — 2026-04-13 — SEO, discoverability, and performance overhaul
 
 Site is fully live and functional at this point. No content was dropped — this is a pure additive / polish pass.
