@@ -144,7 +144,7 @@
       { "@type": "ListItem", "position": 2, "item": { "@type": "MusicGroup", "name": "Kenny Summit",  "location": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Monterey",      "addressRegion": "CA", "addressCountry": "US" } } } },
       { "@type": "ListItem", "position": 3, "item": { "@type": "MusicGroup", "name": "Lady Ryan",       "location": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Oakland",       "addressRegion": "CA", "addressCountry": "US" } } } },
       { "@type": "ListItem", "position": 4, "item": { "@type": "MusicGroup", "name": "Jayvi Velasco",   "location": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "San Francisco", "addressRegion": "CA", "addressCountry": "US" } } } },
-      { "@type": "ListItem", "position": 5, "item": { "@type": "MusicGroup", "name": "Gavin Hardkiss",  "location": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "San Francisco", "addressRegion": "CA", "addressCountry": "US" } } } }
+      { "@type": "ListItem", "position": 5, "item": { "@type": "MusicGroup", "name": "Gavin Hardkiss",  "location": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Monterey", "addressRegion": "CA", "addressCountry": "US" } } } }
     ]
   }
   </script>
@@ -505,7 +505,20 @@
     }
 
     /* ── Connect ──────────────────────────────────── */
-    #connect { padding: 70px 0 50px; }
+    #connect {
+      padding: 70px 0 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    #connect::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('img/hero-scenic.jpg') center/cover no-repeat;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+    }
+    #connect .container { position: relative; z-index: 1; }
 
     .connect-grid {
       display: grid; grid-template-columns: 1.4fr 1fr;
@@ -750,12 +763,6 @@
           <p>Now a staple on the circuit, MonkeyMan holds down a residency at Kenny Summit's club Compact Disco in Monterey. His high-energy sets fuse deep grooves with his Caribbean roots&mdash;no two are the same.</p>
           <p>He's performed at venues from The Great Northern and Monarch to The Valencia Room, held a residency at Ruby Room in Oakland, been featured on Fault Radio San Francisco and La Casa Discoteca Radio Show, and shared the decks with acts like Young Franco, Kenny Summit, Lady Ryan, Jayvi Velasco, and Gavin Hardkiss.</p>
           <p>5hr+ sets are MonkeyMan's paradise. No requests.</p>
-          <div class="about-tags">
-            <span class="about-tag">House</span>
-            <span class="about-tag">Funk</span>
-            <span class="about-tag">Soul</span>
-            <span class="about-tag">No Requests</span>
-          </div>
         </div>
         <div class="about-photo reveal">
           <div class="about-photo-main">
@@ -821,7 +828,7 @@
           <div class="shared-card"><div class="shared-name">Kenny Summit</div><div class="shared-location">Monterey, CA</div></div>
           <div class="shared-card"><div class="shared-name">Lady Ryan</div><div class="shared-location">Oakland, CA</div></div>
           <div class="shared-card"><div class="shared-name">Jayvi Velasco</div><div class="shared-location">San Francisco, CA</div></div>
-          <div class="shared-card"><div class="shared-name">Gavin Hardkiss</div><div class="shared-location">San Francisco, CA</div></div>
+          <div class="shared-card"><div class="shared-name">Gavin Hardkiss</div><div class="shared-location">Monterey, CA</div></div>
         </div>
       </div>
     </div>
@@ -901,9 +908,9 @@
         <div class="gallery-item reveal"><img src="img/gallery-stripes.jpg" alt="MonkeyMan focused at the decks" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-silhouette.jpg" alt="MonkeyMan silhouette by the water" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-jacket.jpg" alt="MonkeyMan in the jacket" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-warm.jpg" alt="MonkeyMan warm portrait" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-62bar.jpg" alt="MonkeyMan at 62 Bar" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-moody.jpg" alt="MonkeyMan moody booth shot" loading="lazy"></div>
+        <div class="gallery-item reveal"><img src="img/gallery-warm.jpg" alt="MonkeyMan portrait" loading="lazy"></div>
+        <div class="gallery-item reveal"><img src="img/gallery-62bar.jpg" alt="MonkeyMan at the venue" loading="lazy"></div>
+        <div class="gallery-item reveal"><img src="img/gallery-moody.jpg" alt="MonkeyMan in the booth" loading="lazy"></div>
       </div>
     </div>
   </section>
