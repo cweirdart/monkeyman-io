@@ -17,17 +17,17 @@
   <meta property="og:image" content="https://monkeyman.io/img/og-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="MonkeyMan — House · Funk · Soul · No Requests">
+  <meta property="og:image:alt" content="MonkeyMan — House · Funk · Soul">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -35,6 +35,8 @@
       --bg: #0a0a0a; --bg-card: #141414;
       --text: #f0ece4; --text-dim: #8a857d;
       --accent: #e8a849; --accent2: #d4783c;
+      --glow: #b24dff;
+      --glow-rgb: 178, 77, 255;
     }
     html { scroll-behavior: smooth; background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.65; -webkit-font-smoothing: antialiased; }
     body { overflow-x: hidden; }
@@ -48,17 +50,32 @@
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     header .container { display: flex; justify-content: space-between; align-items: center; }
+    .header-left { display: flex; align-items: center; gap: 20px; }
     .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.04em; color: var(--text); text-decoration: none; }
     .logo span { color: var(--accent); }
-    .back-link { font-size: 0.85rem; color: var(--text-dim); text-decoration: none; }
-    .back-link:hover { color: var(--text); }
+
+    .lang-toggle {
+      display: flex; gap: 0; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; overflow: hidden;
+    }
+    .lang-btn {
+      padding: 4px 12px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; border: none; cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      background: transparent; color: var(--text-dim);
+      transition: background 0.3s, color 0.3s;
+    }
+    .lang-btn.active { background: var(--accent); color: var(--bg); }
+    .lang-btn:hover:not(.active) { color: var(--text); }
+
+    .back-link { font-size: 0.85rem; color: var(--text-dim); text-decoration: none; transition: color 0.3s, text-shadow 0.3s; }
+    .back-link:hover { color: var(--text); text-shadow: 0 0 12px rgba(var(--glow-rgb), 0.8); }
 
     main { padding: 60px 0 100px; }
 
     h1 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Fugaz One', 'Space Grotesk', sans-serif;
       font-size: clamp(2.4rem, 6vw, 3.8rem);
-      font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;
+      font-weight: 400; letter-spacing: 0.01em; line-height: 1.1;
       margin-bottom: 12px;
     }
     .subtitle {
@@ -67,8 +84,8 @@
     }
 
     h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.35rem; font-weight: 600;
+      font-family: 'Fugaz One', 'Space Grotesk', sans-serif;
+      font-size: 1.35rem; font-weight: 400;
       color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;
       margin: 56px 0 20px; padding-bottom: 10px;
       border-bottom: 1px solid rgba(232,168,73,0.2);
@@ -89,19 +106,14 @@
     .fact-value { font-size: 0.95rem; color: var(--text); word-break: break-word; }
     .fact-value a { color: var(--text); text-decoration: underline; text-decoration-color: rgba(232,168,73,0.4); }
 
-    .epk-poster {
-      margin: 30px 0;
-      border-radius: 12px; overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    }
-    .epk-poster img { width: 100%; height: auto; display: block; }
-
     .photos-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
       margin-top: 20px;
     }
     .photos-grid img { width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; border-radius: 8px; display: block; }
     .photos-note { font-size: 0.85rem; color: var(--text-dim); margin-top: 16px; }
+
+    .photos-section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-dim); margin: 30px 0 12px; font-weight: 500; }
 
     ul { margin-left: 22px; margin-bottom: 16px; }
     ul li { margin-bottom: 6px; }
@@ -113,9 +125,9 @@
       font-size: 0.85rem; font-weight: 500;
       letter-spacing: 0.08em; text-transform: uppercase;
       color: var(--accent); text-decoration: none;
-      transition: all 0.3s;
+      transition: all 0.3s, box-shadow 0.3s;
     }
-    .cta:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+    .cta:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); box-shadow: 0 0 20px rgba(var(--glow-rgb), 0.6), 0 0 40px rgba(var(--glow-rgb), 0.3); }
 
     footer {
       text-align: center; padding: 40px 0;
@@ -133,33 +145,39 @@
 
   <header>
     <div class="container">
-      <a href="/" class="logo">MONKEY<span>MAN</span></a>
-      <a href="/" class="back-link">&larr; Back to site</a>
+      <div class="header-left">
+        <a href="/" class="logo">MONKEY<span>MAN</span></a>
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+        </div>
+      </div>
+      <a href="/" class="back-link">&larr; <span data-i18n="back">Back to site</span></a>
     </div>
   </header>
 
   <main>
     <div class="container">
 
-      <h1>Press &amp; Booking</h1>
-      <p class="subtitle">Everything you need to book MonkeyMan, in one place.</p>
+      <h1 data-i18n="title">Press &amp; Booking</h1>
+      <p class="subtitle" data-i18n="subtitle">Everything you need to book MonkeyMan, in one place.</p>
 
-      <h2>Quick Facts</h2>
+      <h2 data-i18n="h_facts">Quick Facts</h2>
       <div class="facts">
         <div class="fact">
-          <div class="fact-label">Artist</div>
+          <div class="fact-label" data-i18n="fl_artist">Artist</div>
           <div class="fact-value">MonkeyMan</div>
         </div>
         <div class="fact">
-          <div class="fact-label">Based in</div>
-          <div class="fact-value">Oakland, California</div>
+          <div class="fact-label" data-i18n="fl_based">Based in</div>
+          <div class="fact-value" data-i18n="fv_based">Oakland, California</div>
         </div>
         <div class="fact">
-          <div class="fact-label">Genres</div>
+          <div class="fact-label" data-i18n="fl_genres">Genres</div>
           <div class="fact-value">House &middot; Soul &middot; Funk &middot; Disco &middot; Classics</div>
         </div>
         <div class="fact">
-          <div class="fact-label">Booking</div>
+          <div class="fact-label" data-i18n="fl_booking">Booking</div>
           <div class="fact-value"><a href="mailto:itsdjmonkeyman@gmail.com">itsdjmonkeyman@gmail.com</a></div>
         </div>
         <div class="fact">
@@ -172,16 +190,18 @@
         </div>
       </div>
 
-      <h2>Short Bio (50 words)</h2>
-      <p class="bio-short">Born in Venezuela to a cellist mother, MonkeyMan is an Oakland-based DJ rooted in house, funk, and soul. He holds a residency at Kenny Summit's Compact Disco in Monterey and fuses deep grooves with his Caribbean roots&mdash;no two sets are the same. Extended sets are his paradise. No requests.</p>
+      <h2 data-i18n="h_short_bio">Short Bio</h2>
+      <p class="bio-short" data-i18n="short_bio">Born in Venezuela to a cellist mother, MonkeyMan is an Oakland-based DJ rooted in house, funk, and soul. He holds a residency at Kenny Summit&rsquo;s Compact Disco in Monterey and fuses deep grooves with his Caribbean roots&mdash;no two sets are the same. Extended sets are his paradise. No requests.</p>
 
-      <h2>Long Bio (100 words)</h2>
-      <p>Born in Venezuela to a cellist mother, MonkeyMan grew up immersed in music. After hosting and producing radio shows in Caracas, he relocated to Oakland, California, where the Bay Area's underground scene opened him to a world of house, funk, soul, disco, and everything in between.</p>
-      <p>Now a staple on the circuit, MonkeyMan holds down a residency at Kenny Summit's club Compact Disco in Monterey. His high-energy sets fuse deep grooves with his Caribbean roots&mdash;no two are the same.</p>
-      <p>He's performed at venues from The Great Northern and Monarch to The Valencia Room, held a residency at Ruby Room in Oakland, been featured on Fault Radio San Francisco and La Casa Discoteca Radio Show, and shared the decks with Young Franco, Kenny Summit, Lady Ryan, Jayvi Velasco, and Gavin Hardkiss.</p>
-      <p>Extended sets are MonkeyMan's paradise. No requests.</p>
+      <h2 data-i18n="h_long_bio">Full Bio</h2>
+      <div data-i18n-html="long_bio">
+        <p>Born in Venezuela to a cellist mother, MonkeyMan grew up immersed in music. After hosting and producing radio shows in Caracas, he relocated to Oakland, California, where the Bay Area&rsquo;s underground scene opened him to a world of house, funk, soul, disco, and everything in between.</p>
+        <p>Now a staple on the circuit, MonkeyMan holds down a residency at Kenny Summit&rsquo;s club Compact Disco in Monterey. His high-energy sets fuse deep grooves with his Caribbean roots&mdash;no two are the same.</p>
+        <p>He&rsquo;s performed at venues from The Great Northern and Monarch to The Valencia Room, held a residency at Ruby Room in Oakland, been featured on Fault Radio San Francisco and La Casa Discoteca Radio Show, and shared the decks with Young Franco, Kenny Summit, Lady Ryan, Jayvi Velasco, and Gavin Hardkiss.</p>
+        <p>Extended sets are MonkeyMan&rsquo;s paradise. No requests.</p>
+      </div>
 
-      <h2>Venues &amp; Residencies</h2>
+      <h2 data-i18n="h_venues">Venues &amp; Residencies</h2>
       <ul>
         <li>Ruby Room</li>
         <li>Thee Stork Club</li>
@@ -205,7 +225,7 @@
         <li>Town Bar &amp; Lounge</li>
       </ul>
 
-      <h2>Shared the Decks With</h2>
+      <h2 data-i18n="h_shared">Shared the Decks With</h2>
       <ul>
         <li>Young Franco &mdash; San Francisco, CA</li>
         <li>Kenny Summit &mdash; Monterey, CA</li>
@@ -214,20 +234,16 @@
         <li>Gavin Hardkiss &mdash; Monterey, CA</li>
       </ul>
 
-      <h2>Radio &amp; Features</h2>
+      <h2 data-i18n="h_radio">Radio &amp; Features</h2>
       <ul>
         <li><a href="https://www.youtube.com/watch?v=3bwjXSBJYsM" target="_blank" rel="noopener">Fault Radio San Francisco</a></li>
-        <li>La Casa Discoteca Radio Show (guest)</li>
+        <li>La Casa Discoteca Radio Show (<span data-i18n="guest">guest</span>)</li>
       </ul>
 
-      <h2>EPK Poster</h2>
-      <div class="epk-poster">
-        <img src="img/epk.png" alt="MonkeyMan EPK — House, Funk, Soul, No Requests">
-      </div>
-      <p><a href="img/epk.png" download class="cta">Download EPK (PNG)</a></p>
+      <h2 data-i18n="h_photos">Press Photos</h2>
+      <p data-i18n-html="photos_intro">High-resolution photography by <a href="https://cweird.com" target="_blank" rel="noopener">c.weird</a>. Right-click any photo to save, or contact for original files.</p>
 
-      <h2>Press Photos</h2>
-      <p>High-resolution photography by <a href="https://cweird.com" target="_blank" rel="noopener">c.weird</a>. Right-click any photo to save, or contact for original files.</p>
+      <p class="photos-section-label" data-i18n="photos_digital">Digital</p>
       <div class="photos-grid">
         <img src="img/hero-purple.jpg" alt="MonkeyMan DJing in purple-lit venue" loading="lazy">
         <img src="img/hero-redstage.jpg" alt="MonkeyMan at red-lit stage" loading="lazy">
@@ -236,11 +252,25 @@
         <img src="img/hero-duo.jpg" alt="MonkeyMan with collaborator at outdoor booth" loading="lazy">
         <img src="img/gallery-purple-mix.jpg" alt="MonkeyMan purple-lit mixing" loading="lazy">
       </div>
-      <p class="photos-note">Credit photos: &ldquo;Photo by c.weird @cweirdart&rdquo; — <a href="https://cweird.com" target="_blank" rel="noopener">cweird.com</a></p>
 
-      <h2>Booking</h2>
-      <p>Available for club nights, warehouse parties, weddings, private events, brand activations, and radio guest spots.</p>
-      <p><a href="mailto:itsdjmonkeyman@gmail.com" class="cta">Email to Book</a> &nbsp; <a href="/#connect" class="cta">Contact Form</a></p>
+      <p class="photos-section-label">Polaroids</p>
+      <div class="photos-grid">
+        <img src="img/gallery-deep.jpg" alt="MonkeyMan deep in the mix" loading="lazy">
+        <img src="img/gallery-dancing.jpg" alt="MonkeyMan vibing on the floor" loading="lazy">
+        <img src="img/gallery-stripes.jpg" alt="MonkeyMan focused at the decks" loading="lazy">
+        <img src="img/gallery-booth.jpg" alt="MonkeyMan DJing in Hawaiian shirt" loading="lazy">
+        <img src="img/gallery-silhouette.jpg" alt="MonkeyMan silhouette by the water" loading="lazy">
+        <img src="img/gallery-smoke.jpg" alt="MonkeyMan in the smoke" loading="lazy">
+        <img src="img/gallery-jacket.jpg" alt="MonkeyMan in the jacket" loading="lazy">
+        <img src="img/gallery-silhouette-2.jpg" alt="MonkeyMan silhouette at the decks" loading="lazy">
+        <img src="img/gallery-vibes.jpg" alt="MonkeyMan feeling the music" loading="lazy">
+      </div>
+
+      <p class="photos-note" data-i18n-html="photos_credit">Credit photos: &ldquo;Photo by c.weird @cweirdart&rdquo; — <a href="https://cweird.com" target="_blank" rel="noopener">cweird.com</a></p>
+
+      <h2 data-i18n="h_booking">Booking</h2>
+      <p data-i18n="booking_desc">Available for club nights, warehouse parties, weddings, private events, brand activations, and radio guest spots.</p>
+      <p><a href="mailto:itsdjmonkeyman@gmail.com" class="cta" data-i18n="cta_email">Email to Book</a> &nbsp; <a href="/#connect" class="cta" data-i18n="cta_form">Contact Form</a></p>
 
     </div>
   </main>
@@ -250,6 +280,80 @@
       &copy; 2026 MonkeyMan &middot; Site by <a href="https://cweird.com" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">c.weird:</a>
     </div>
   </footer>
+
+  <script>
+    const i18n = {
+      en: {
+        back: 'Back to site',
+        title: 'Press & Booking',
+        subtitle: 'Everything you need to book MonkeyMan, in one place.',
+        h_facts: 'Quick Facts',
+        fl_artist: 'Artist',
+        fl_based: 'Based in',
+        fv_based: 'Oakland, California',
+        fl_genres: 'Genres',
+        fl_booking: 'Booking',
+        h_short_bio: 'Short Bio',
+        short_bio: 'Born in Venezuela to a cellist mother, MonkeyMan is an Oakland-based DJ rooted in house, funk, and soul. He holds a residency at Kenny Summit\u2019s Compact Disco in Monterey and fuses deep grooves with his Caribbean roots\u2014no two sets are the same. Extended sets are his paradise. No requests.',
+        h_long_bio: 'Full Bio',
+        long_bio: '<p>Born in Venezuela to a cellist mother, MonkeyMan grew up immersed in music. After hosting and producing radio shows in Caracas, he relocated to Oakland, California, where the Bay Area\u2019s underground scene opened him to a world of house, funk, soul, disco, and everything in between.</p><p>Now a staple on the circuit, MonkeyMan holds down a residency at Kenny Summit\u2019s club Compact Disco in Monterey. His high-energy sets fuse deep grooves with his Caribbean roots\u2014no two are the same.</p><p>He\u2019s performed at venues from The Great Northern and Monarch to The Valencia Room, held a residency at Ruby Room in Oakland, been featured on Fault Radio San Francisco and La Casa Discoteca Radio Show, and shared the decks with Young Franco, Kenny Summit, Lady Ryan, Jayvi Velasco, and Gavin Hardkiss.</p><p>Extended sets are MonkeyMan\u2019s paradise. No requests.</p>',
+        h_venues: 'Venues & Residencies',
+        h_shared: 'Shared the Decks With',
+        h_radio: 'Radio & Features',
+        guest: 'guest',
+        h_photos: 'Press Photos',
+        photos_intro: 'High-resolution photography by <a href="https://cweird.com" target="_blank" rel="noopener">c.weird</a>. Right-click any photo to save, or contact for original files.',
+        photos_digital: 'Digital',
+        photos_credit: 'Credit photos: \u201cPhoto by c.weird @cweirdart\u201d \u2014 <a href="https://cweird.com" target="_blank" rel="noopener">cweird.com</a>',
+        h_booking: 'Booking',
+        booking_desc: 'Available for club nights, warehouse parties, weddings, private events, brand activations, and radio guest spots.',
+        cta_email: 'Email to Book',
+        cta_form: 'Contact Form'
+      },
+      es: {
+        back: 'Volver al sitio',
+        title: 'Prensa y Contrataciones',
+        subtitle: 'Todo lo que necesitas para contratar a MonkeyMan, en un solo lugar.',
+        h_facts: 'Datos Clave',
+        fl_artist: 'Artista',
+        fl_based: 'Ubicaci\u00f3n',
+        fv_based: 'Oakland, California',
+        fl_genres: 'G\u00e9neros',
+        fl_booking: 'Contrataciones',
+        h_short_bio: 'Biograf\u00eda Corta',
+        short_bio: 'Nacido en Venezuela, hijo de una madre violoncellista, MonkeyMan es un DJ radicado en Oakland con ra\u00edces en el house, funk y soul. Mantiene una residencia en Compact Disco de Kenny Summit en Monterey y fusiona grooves profundos con sus ra\u00edces caribe\u00f1as\u2014no hay dos sets iguales. Los sets largos son su para\u00edso. Sin peticiones.',
+        h_long_bio: 'Biograf\u00eda Completa',
+        long_bio: '<p>Nacido en Venezuela, hijo de una madre violoncellista, MonkeyMan creci\u00f3 inmerso en la m\u00fasica. Tras producir y conducir programas de radio en Caracas, se mud\u00f3 a Oakland, California, donde la escena underground del Bay Area le abri\u00f3 las puertas a un universo de house, funk, soul, disco y todo lo que existe en el medio.</p><p>Hoy pieza clave del circuito, MonkeyMan mantiene una residencia en el club Compact Disco de Kenny Summit en Monterey. Sus sets de alta energ\u00eda fusionan grooves profundos con sus ra\u00edces caribe\u00f1as\u2014no hay dos iguales.</p><p>Ha tocado en venues como The Great Northern y Monarch hasta The Valencia Room, tuvo una residencia en Ruby Room en Oakland, fue presentado en Fault Radio San Francisco y La Casa Discoteca Radio Show, y comparti\u00f3 cabina con Young Franco, Kenny Summit, Lady Ryan, Jayvi Velasco y Gavin Hardkiss.</p><p>Los sets extendidos son el para\u00edso de MonkeyMan. Sin peticiones.</p>',
+        h_venues: 'Venues y Residencias',
+        h_shared: 'Comparti\u00f3 Cabina Con',
+        h_radio: 'Radio y Apariciones',
+        guest: 'invitado',
+        h_photos: 'Fotos de Prensa',
+        photos_intro: 'Fotograf\u00eda en alta resoluci\u00f3n por <a href="https://cweird.com" target="_blank" rel="noopener">c.weird</a>. Clic derecho para guardar, o escr\u00edbenos para archivos originales.',
+        photos_digital: 'Digitales',
+        photos_credit: 'Cr\u00e9dito fotos: \u201cFoto por c.weird @cweirdart\u201d \u2014 <a href="https://cweird.com" target="_blank" rel="noopener">cweird.com</a>',
+        h_booking: 'Contrataciones',
+        booking_desc: 'Disponible para noches de club, fiestas en warehouses, bodas, eventos privados, activaciones de marca y apariciones en radio.',
+        cta_email: 'Email para Contratar',
+        cta_form: 'Formulario de Contacto'
+      }
+    };
+
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+
+      const strings = i18n[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (strings[key] !== undefined) el.textContent = strings[key];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (strings[key] !== undefined) el.innerHTML = strings[key];
+      });
+    }
+  </script>
 
 </body>
 </html>
