@@ -50,22 +50,19 @@
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     header .container { display: flex; justify-content: space-between; align-items: center; }
-    .header-left { display: flex; align-items: center; gap: 20px; }
     .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.04em; color: var(--text); text-decoration: none; }
     .logo span { color: var(--accent); }
 
-    .lang-toggle {
-      display: flex; gap: 0; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; overflow: hidden;
-    }
+    .lang-toggle { display: flex; gap: 4px; }
     .lang-btn {
-      padding: 4px 12px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; border: none; cursor: pointer;
-      font-family: 'Space Grotesk', sans-serif;
-      background: transparent; color: var(--text-dim);
-      transition: background 0.3s, color 0.3s;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-dim); font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em;
+      padding: 4px 10px; border-radius: 20px; cursor: pointer;
+      transition: all 0.3s;
     }
-    .lang-btn.active { background: var(--accent); color: var(--bg); }
-    .lang-btn:hover:not(.active) { color: var(--text); }
+    .lang-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+    .lang-btn:hover:not(.active) { color: var(--text); border-color: rgba(255,255,255,0.2); }
 
     .back-link { font-size: 0.85rem; color: var(--text-dim); text-decoration: none; transition: color 0.3s, text-shadow 0.3s; }
     .back-link:hover { color: var(--text); text-shadow: 0 0 12px rgba(var(--glow-rgb), 0.8); }
@@ -145,14 +142,14 @@
 
   <header>
     <div class="container">
-      <div class="header-left">
-        <a href="/" class="logo">MONKEY<span>MAN</span></a>
+      <a href="/" class="logo">MONKEY<span>MAN</span></a>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <a href="/" class="back-link">&larr; <span data-i18n="back">Back to site</span></a>
         <div class="lang-toggle">
           <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
           <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
         </div>
       </div>
-      <a href="/" class="back-link">&larr; <span data-i18n="back">Back to site</span></a>
     </div>
   </header>
 
