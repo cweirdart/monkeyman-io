@@ -234,6 +234,18 @@
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text); transition: transform 0.3s, opacity 0.3s; }
 
+    /* ── Language Toggle ─────────────────────────── */
+    .lang-toggle { display: flex; gap: 4px; margin-left: 16px; }
+    .lang-btn {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-dim); font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em;
+      padding: 4px 10px; border-radius: 20px; cursor: pointer;
+      transition: all 0.3s;
+    }
+    .lang-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+    .lang-btn:hover:not(.active) { color: var(--text); border-color: rgba(255,255,255,0.2); }
+
     /* ── Hero with photo carousel bg ─────────────── */
     #hero {
       min-height: 100vh;
@@ -692,16 +704,22 @@
     <div class="container">
       <a href="#hero" class="nav-logo" aria-label="MonkeyMan home">MONKEY<span>MAN</span></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#video">Video</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="/press.html">Press Kit</a></li>
-        <li><a href="#connect">Book</a></li>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#music" data-i18n="nav_music">Music</a></li>
+        <li><a href="#video" data-i18n="nav_video">Video</a></li>
+        <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+        <li><a href="/press.html" data-i18n="nav_press">Press Kit</a></li>
+        <li><a href="#connect" data-i18n="nav_book">Book</a></li>
       </ul>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -739,10 +757,10 @@
           <img src="img/logo.png" alt="MonkeyMan" width="640" height="380" fetchpriority="high">
         </picture>
       </h1>
-      <p class="hero-sub">House &middot; Funk &middot; Soul</p>
-      <p class="hero-sub" style="margin-top:-28px; font-size:0.85rem; opacity:0.6;">Oakland, CA</p>
+      <p class="hero-sub" data-i18n="hero_genres">House &middot; Funk &middot; Soul</p>
+      <p class="hero-sub" style="margin-top:-28px; font-size:0.85rem; opacity:0.6;" data-i18n="hero_location">Oakland, CA</p>
       <a href="#music" class="hero-cta">
-        Get Groovy
+        <span data-i18n="hero_cta">Get Groovy</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </a>
     </div>
@@ -753,12 +771,14 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-text reveal">
-          <p class="section-label">About</p>
-          <h2 class="section-title">Underground sounds for your soul.</h2>
-          <p>Born in Venezuela to a cellist mother, MonkeyMan grew up immersed in music. After hosting and producing radio shows in Caracas, he relocated to Oakland, California, where the Bay Area's underground scene opened him to a world of house, funk, soul, disco, and everything in between.</p>
-          <p>Now a staple on the circuit, MonkeyMan holds down a residency at Kenny Summit's club Compact Disco in Monterey. His high-energy sets fuse deep grooves with his Caribbean roots&mdash;no two are the same.</p>
-          <p>He's performed at venues from The Great Northern and Monarch to The Valencia Room, held a residency at Ruby Room in Oakland, been featured on Fault Radio San Francisco and La Casa Discoteca Radio Show, and shared the decks with Young Franco, Kenny Summit, Lady Ryan, Jayvi Velasco, and Gavin Hardkiss.</p>
-          <p>Extended sets are MonkeyMan's paradise. No requests.</p>
+          <p class="section-label" data-i18n="about_label">About</p>
+          <h2 class="section-title" data-i18n="about_title">Underground sounds for your soul.</h2>
+          <div data-i18n-html="about_bio">
+            <p>Born in Venezuela to a cellist mother, MonkeyMan grew up immersed in music. After hosting and producing radio shows in Caracas, he relocated to Oakland, California, where the Bay Area's underground scene opened him to a world of house, funk, soul, disco, and everything in between.</p>
+            <p>Now a staple on the circuit, MonkeyMan holds down a residency at Kenny Summit's club Compact Disco in Monterey. His high-energy sets fuse deep grooves with his Caribbean roots&mdash;no two are the same.</p>
+            <p>He's performed at venues from The Great Northern and Monarch to The Valencia Room, held a residency at Ruby Room in Oakland, been featured on Fault Radio San Francisco and La Casa Discoteca Radio Show, and shared the decks with Young Franco, Kenny Summit, Lady Ryan, Jayvi Velasco, and Gavin Hardkiss.</p>
+            <p>Extended sets are MonkeyMan's paradise. No requests.</p>
+          </div>
         </div>
         <div class="about-photo reveal">
           <div class="about-photo-main">
@@ -769,7 +789,7 @@
 
       <!-- Venues Marquee -->
       <div class="venues-section reveal">
-        <p class="section-label">Venues &amp; Residencies</p>
+        <p class="section-label" data-i18n="venues_label">Venues &amp; Residencies</p>
         <div class="venues-marquee">
           <div class="venues-track">
             <span class="venue-name">Ruby Room</span><span class="venue-dot">&bull;</span>
@@ -818,7 +838,7 @@
 
       <!-- Shared Stages -->
       <div class="shared-section reveal">
-        <p class="section-label">Shared the Decks With</p>
+        <p class="section-label" data-i18n="shared_label">Shared the Decks With</p>
         <div class="shared-grid">
           <div class="shared-card"><div class="shared-name">Young Franco</div><div class="shared-location">San Francisco, CA</div></div>
           <div class="shared-card"><div class="shared-name">Kenny Summit</div><div class="shared-location">Monterey, CA</div></div>
@@ -925,8 +945,8 @@
   <section id="connect">
     <div class="container">
       <div class="reveal" style="text-align:center; margin-bottom:50px;">
-        <p class="section-label">Book / Contact</p>
-        <h2 class="section-title">Let's Dance</h2>
+        <p class="section-label" data-i18n="connect_label">Book / Contact</p>
+        <h2 class="section-title" data-i18n="connect_title">Let's Dance</h2>
       </div>
       <div class="connect-grid">
         <div class="contact-form-wrap reveal">
@@ -937,33 +957,33 @@
             <input type="text" name="_honey" style="display:none">
             <div class="form-row">
               <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Your name">
+                <label for="name" data-i18n="form_name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your name" data-i18n-ph="form_name_ph">
               </div>
               <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email" data-i18n="form_email">Email</label>
                 <input type="email" id="email" name="email" required placeholder="your@email.com">
               </div>
             </div>
             <div class="form-group">
-              <label for="subject">What's this about?</label>
+              <label for="subject" data-i18n="form_subject">What's this about?</label>
               <select id="subject" name="subject">
-                <option value="Booking Inquiry">Booking Inquiry</option>
-                <option value="Collaboration">Collaboration</option>
-                <option value="Press / Media">Press / Media</option>
-                <option value="Just saying what's good">Just saying what's good</option>
+                <option value="Booking Inquiry" data-i18n="opt_booking">Booking Inquiry</option>
+                <option value="Collaboration" data-i18n="opt_collab">Collaboration</option>
+                <option value="Press / Media" data-i18n="opt_press">Press / Media</option>
+                <option value="Just saying what's good" data-i18n="opt_hello">Just saying what's good</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" required placeholder="What's the event, venue, vision, vibe...?"></textarea>
+              <label for="message" data-i18n="form_message">Message</label>
+              <textarea id="message" name="message" rows="4" required placeholder="What's the event, venue, vision, vibe...?" data-i18n-ph="form_message_ph"></textarea>
             </div>
-            <button type="submit" class="form-submit">Send It</button>
+            <button type="submit" class="form-submit" data-i18n="form_submit">Send It</button>
           </form>
         </div>
         <div class="connect-sidebar reveal">
           <div class="sidebar-card">
-            <h3>Follow</h3>
+            <h3 data-i18n="follow">Follow</h3>
             <div class="social-links-vertical" data-follow>
               <a href="https://instagram.com/djmonkey_man" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
@@ -1008,11 +1028,11 @@
         </picture>
       </a>
       <p class="footer-nav">
-        <a href="#connect">Book</a>
+        <a href="#connect" data-i18n="nav_book">Book</a>
         &nbsp;&middot;&nbsp;
-        <a href="/press.html">Press Kit</a>
+        <a href="/press.html" data-i18n="nav_press">Press Kit</a>
       </p>
-      <p style="margin-top:14px;">&copy; 2026 MonkeyMan. All rights reserved. Site + Photos by <a href="https://cweird.com" target="_blank" rel="noopener" style="color:var(--accent);">c.weird:</a></p>
+      <p style="margin-top:14px;" data-i18n-html="footer_copy">&copy; 2026 MonkeyMan. All rights reserved. Site + Photos by <a href="https://cweird.com" target="_blank" rel="noopener" style="color:var(--accent);">c.weird:</a></p>
     </div>
   </footer>
 
@@ -1128,6 +1148,91 @@
     }, {passive: true});
 
     // Copy-email UX improvement: visual feedback handled inline
+
+    // ── Language Toggle ────────────────────────────
+    const i18n = {
+      en: {
+        // Nav
+        nav_about: 'About', nav_music: 'Music', nav_video: 'Video',
+        nav_gallery: 'Gallery', nav_press: 'Press Kit', nav_book: 'Book',
+        // Hero
+        hero_genres: 'House \u00b7 Funk \u00b7 Soul',
+        hero_location: 'Oakland, CA',
+        hero_cta: 'Get Groovy',
+        // About
+        about_label: 'About',
+        about_title: 'Underground sounds for your soul.',
+        about_bio: '<p>Born in Venezuela to a cellist mother, MonkeyMan grew up immersed in music. After hosting and producing radio shows in Caracas, he relocated to Oakland, California, where the Bay Area\u2019s underground scene opened him to a world of house, funk, soul, disco, and everything in between.</p><p>Now a staple on the circuit, MonkeyMan holds down a residency at Kenny Summit\u2019s club Compact Disco in Monterey. His high-energy sets fuse deep grooves with his Caribbean roots\u2014no two are the same.</p><p>He\u2019s performed at venues from The Great Northern and Monarch to The Valencia Room, held a residency at Ruby Room in Oakland, been featured on Fault Radio San Francisco and La Casa Discoteca Radio Show, and shared the decks with Young Franco, Kenny Summit, Lady Ryan, Jayvi Velasco, and Gavin Hardkiss.</p><p>Extended sets are MonkeyMan\u2019s paradise. No requests.</p>',
+        // Sections
+        venues_label: 'Venues & Residencies',
+        shared_label: 'Shared the Decks With',
+        // Connect
+        connect_label: 'Book / Contact',
+        connect_title: "Let's Dance",
+        form_name: 'Name', form_name_ph: 'Your name',
+        form_email: 'Email',
+        form_subject: "What's this about?",
+        opt_booking: 'Booking Inquiry', opt_collab: 'Collaboration',
+        opt_press: 'Press / Media', opt_hello: "Just saying what's good",
+        form_message: 'Message',
+        form_message_ph: "What's the event, venue, vision, vibe...?",
+        form_submit: 'Send It',
+        follow: 'Follow',
+        // Footer
+        footer_copy: '\u00a9 2026 MonkeyMan. All rights reserved. Site + Photos by <a href="https://cweird.com" target="_blank" rel="noopener" style="color:var(--accent);">c.weird:</a>'
+      },
+      es: {
+        // Nav
+        nav_about: 'Bio', nav_music: 'M\u00fasica', nav_video: 'Video',
+        nav_gallery: 'Galer\u00eda', nav_press: 'Prensa', nav_book: 'Contacto',
+        // Hero
+        hero_genres: 'House \u00b7 Funk \u00b7 Soul',
+        hero_location: 'Oakland, CA',
+        hero_cta: 'Dale Play',
+        // About
+        about_label: 'Bio',
+        about_title: 'Sonidos underground para tu alma.',
+        about_bio: '<p>Nacido en Venezuela, hijo de una madre violoncellista, MonkeyMan creci\u00f3 inmerso en la m\u00fasica. Tras producir y conducir programas de radio en Caracas, se mud\u00f3 a Oakland, California, donde la escena underground del Bay Area le abri\u00f3 las puertas a un universo de house, funk, soul, disco y todo lo que existe en el medio.</p><p>Hoy pieza clave del circuito, MonkeyMan mantiene una residencia en el club Compact Disco de Kenny Summit en Monterey. Sus sets de alta energ\u00eda fusionan grooves profundos con sus ra\u00edces caribe\u00f1as\u2014no hay dos iguales.</p><p>Ha tocado en venues como The Great Northern y Monarch hasta The Valencia Room, tuvo una residencia en Ruby Room en Oakland, fue presentado en Fault Radio San Francisco y La Casa Discoteca Radio Show, y comparti\u00f3 cabina con Young Franco, Kenny Summit, Lady Ryan, Jayvi Velasco y Gavin Hardkiss.</p><p>Los sets extendidos son el para\u00edso de MonkeyMan. Sin peticiones.</p>',
+        // Sections
+        venues_label: 'Venues y Residencias',
+        shared_label: 'Comparti\u00f3 Cabina Con',
+        // Connect
+        connect_label: 'Contacto / Contrataciones',
+        connect_title: 'A Bailar',
+        form_name: 'Nombre', form_name_ph: 'Tu nombre',
+        form_email: 'Email',
+        form_subject: '\u00bfDe qu\u00e9 se trata?',
+        opt_booking: 'Contrataci\u00f3n', opt_collab: 'Colaboraci\u00f3n',
+        opt_press: 'Prensa / Medios', opt_hello: 'Solo saludando',
+        form_message: 'Mensaje',
+        form_message_ph: '\u00bfCu\u00e1l es el evento, venue, visi\u00f3n, vibe...?',
+        form_submit: 'Enviar',
+        follow: 'S\u00edguelo',
+        // Footer
+        footer_copy: '\u00a9 2026 MonkeyMan. Todos los derechos reservados. Sitio + Fotos por <a href="https://cweird.com" target="_blank" rel="noopener" style="color:var(--accent);">c.weird:</a>'
+      }
+    };
+
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+      const strings = i18n[lang];
+      // Text content
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (strings[key] !== undefined) el.textContent = strings[key];
+      });
+      // HTML content
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (strings[key] !== undefined) el.innerHTML = strings[key];
+      });
+      // Placeholders
+      document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+        const key = el.getAttribute('data-i18n-ph');
+        if (strings[key] !== undefined) el.placeholder = strings[key];
+      });
+    }
   </script>
 
 </body>
