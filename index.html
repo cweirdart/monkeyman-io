@@ -505,20 +505,15 @@
     }
 
     /* ── Connect ──────────────────────────────────── */
-    #connect {
-      padding: 70px 0 50px;
-      position: relative;
-      overflow: hidden;
+    #connect { padding: 70px 0 50px; }
+    .connect-hero {
+      width: 100%; max-width: 900px; margin: 0 auto 50px;
+      border-radius: 16px; overflow: hidden;
     }
-    #connect::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: url('img/hero-scenic.jpg') center/cover no-repeat;
-      opacity: 0.12;
-      pointer-events: none;
-      z-index: 0;
+    .connect-hero img {
+      width: 100%; height: auto; display: block;
+      border-radius: 16px;
     }
-    #connect .container { position: relative; z-index: 1; }
 
     .connect-grid {
       display: grid; grid-template-columns: 1.4fr 1fr;
@@ -902,15 +897,15 @@
     <div class="container">
       <!-- Polaroids — these have real borders baked in -->
       <div class="gallery-grid">
-        <div class="gallery-item reveal"><img src="img/gallery-vibes.jpg" alt="MonkeyMan feeling the music" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-dancing.jpg" alt="MonkeyMan vibing at 62 Bar" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-booth.jpg" alt="MonkeyMan DJing in Hawaiian shirt" loading="lazy"></div>
+        <div class="gallery-item reveal"><img src="img/gallery-deep.jpg" alt="MonkeyMan deep in the mix" loading="lazy"></div>
+        <div class="gallery-item reveal"><img src="img/gallery-dancing.jpg" alt="MonkeyMan vibing on the floor" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-stripes.jpg" alt="MonkeyMan focused at the decks" loading="lazy"></div>
+        <div class="gallery-item reveal"><img src="img/gallery-booth.jpg" alt="MonkeyMan DJing in Hawaiian shirt" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-silhouette.jpg" alt="MonkeyMan silhouette by the water" loading="lazy"></div>
+        <div class="gallery-item reveal"><img src="img/gallery-smoke.jpg" alt="MonkeyMan in the smoke" loading="lazy"></div>
         <div class="gallery-item reveal"><img src="img/gallery-jacket.jpg" alt="MonkeyMan in the jacket" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-warm.jpg" alt="MonkeyMan portrait" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-62bar.jpg" alt="MonkeyMan at the venue" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="img/gallery-moody.jpg" alt="MonkeyMan in the booth" loading="lazy"></div>
+        <div class="gallery-item reveal"><img src="img/gallery-silhouette-2.jpg" alt="MonkeyMan silhouette at the decks" loading="lazy"></div>
+        <div class="gallery-item reveal"><img src="img/gallery-vibes.jpg" alt="MonkeyMan feeling the music" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -918,6 +913,12 @@
   <!-- ── Connect ──────────────────────────────────── -->
   <section id="connect">
     <div class="container">
+      <div class="connect-hero reveal">
+        <picture>
+          <source srcset="img/hero-scenic.webp" type="image/webp">
+          <img src="img/hero-scenic.jpg" alt="MonkeyMan DJing at outdoor gazebo" loading="lazy">
+        </picture>
+      </div>
       <div class="reveal" style="text-align:center; margin-bottom:50px;">
         <p class="section-label">Book / Contact</p>
         <h2 class="section-title">Let's Dance</h2>
