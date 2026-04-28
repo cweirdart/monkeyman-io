@@ -20,4 +20,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://monkeyman.io/sitemap.xml
+Sitemap: https://djmonkeyman.com/sitemap.xml
